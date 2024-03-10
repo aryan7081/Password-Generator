@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #100E14; */
+    color: white;
+}
+.container{
+    background-color: #100E14;
+    height: 100vh;
+    
+
+}
+.body{
+
+    max-width: 540px;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0px auto ;
+    padding-top: 50px;
+
+    
+    
+}
+
+.title{
+    color: #7E7D8A;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: sans-serif;
+    margin-bottom: 32px;
+}
+.passwordDisplayBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #232229;
+    padding: 0px 32px;
+    align-items: center;
+    margin-bottom: 24px;
+    height: 80px;
+    
+}
+.passwordPlaceholder{
+    color: #55545B;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: larger;
+    background-color: #232229;
+
+}
+
+.passwordCopyIcon{
+    background-color: #232229; 
+
+
+}
+
+.passwordConditions{
+    background-color: #232229;
+    padding: 24px 32px 32px;
+    width: 100%;
+
+}
+
+
+.rangeDetails{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    font-family: sans-serif;
+    background-color: #232229;
+    align-items: center;
+
+
+}
+
+.passwordRange{
+    background-color: #232229;
+}
+.charLength{
+    background-color: #232229;
+}
+
+.charInt{
+    background-color: #232229;
+    font-size: 40px;
+    font-weight: 400;
+    color: #A3FFAE;
+}
+
+.slider{
+    background-color: #232229;
+}
+
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 36px;
+
+}
+
+.charIncludeGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.charIncludeGroup label{
+    display: flex;
+}
+.charIncludeGroup p{
+    padding-left: 20px;
+}
+
+
+.strengthBox{
+    width: 90%;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #191821;
+    margin:32px auto;
+    font-family: sans-serif;
+
+}
+
+.strengthRating{
+    display: flex;
+    gap: 20px;
+}
+
+.strengthRatingBars{
+    display: flex;
+    gap: 10px;
+}
+
+.strengthRatingBars .bar{
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.generateBtn{
+    width: 90%;
+    padding: 19px 0px;
+    background-color: #A3FFAE;
+    position: relative;
+    left: 5%;
+    cursor: pointer;
+   
+
+
+}
+.generateBtn span{
+    font-size: 18px;
+    color: black;
+    font-weight: 501;
+
+}
