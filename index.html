@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="body">
+            <div class="title">
+                Password Generator
+            </div>
+            <div class="passwordDisplayBox">
+                <div class="passwordPlaceholder">
+                    ABCDCJB
+                </div>
+                <div class="passwordCopyIcon">
+                    <i class="fa fa-copy" style="font-size: 25px; color: #A3FFAE; cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <div class="passwordConditions">
+                    <div class="passwordRange">
+                        <div class="rangeDetails">
+                            <div class="charLength">Character Length</div>
+                            <div class="charInt">10</div>
+                        </div>
+                        <div class="slider">
+                            <input class="rangeValue" type="range" min="0" max="20">
+                        </div>
+                    </div>
+
+                    <div class="charIncludeGroup">
+                        <label>
+                        <input type="checkbox" id="uppercase" value="uppercase"/>
+                        <span class="custom-checkbox"></span>
+                        <p>Include Uppercase Letters</p>
+                        </label>
+                        <label>
+                        <input type="checkbox" id="lowercase" value="lowercase"/>
+                        <span class="custom-checkbox"></span>
+                        <p>Include Lowercase Letters</p>
+                        </label>
+                        <label>
+                        <input type="checkbox" id="numbers" value="numbers"/>
+                        <span class="custom-checkbox"></span>
+                        <p>Include Numbers</p>
+                        </label>
+                        <label>
+                        <input type="checkbox" id="symbols" value="symbols"/>
+                        <span class="custom-checkbox"></span>
+                        <p>Include Symbols</p>
+                        </label>
+                    </div>
+                
+
+                <div class="strengthBox">
+                    <span class="strengthLabel">Strength</span>
+                    <div class="strengthRating">
+                        <span class="strengthRatingText"></span>
+                        <div class="strengthRatingBars">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="generateBtn" type="submit">
+                <span>Generate</span>
+                <svg 
+                    width="12" 
+                    height="12" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <path 
+                    fill="#24232C" 
+                    d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
+                </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
