@@ -58,6 +58,15 @@
 
 }
 
+.passwordCopyIcon i{
+    color: #A3FFAE;
+
+}
+.passwordCopyIcon i:hover{
+    color: orange;
+
+}
+
 .passwordConditions{
     background-color: #232229;
     padding: 24px 32px 32px;

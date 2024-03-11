@@ -1,9 +1,27 @@
+const bar = document.querySelector(".strengthRatingBars .bar")
+
+
 document.querySelector(".generateBtn").addEventListener("click",()=>{
     
     const placeHolder = generateRandomText()
     document.querySelector(".passwordPlaceholder").textContent = placeHolder;
     strengthPredictor();
     document.querySelector(".strengthRatingText").textContent = passStrength;
+    
+    if (passStrength == "WEAK"){
+        document.querySelector(".strengthRatingBars > div:nth-child(1)").style.backgroundColor = "red"
+    }else if(passStrength == "MEDIUM"){
+        document.querySelectorAll(".strengthRatingBars > div:nth-child(-n+2)").forEach(function(childDiv){
+            childDiv.style.backgroundColor = "orange"
+            console.log("selected")
+        })
+    }else if(passStrength == "STRONG"){
+        document.querySelectorAll(".strengthRatingBars > div").forEach(function(divs){
+            divs.style.backgroundColor = "green"
+        })
+    }
+
+    document.querySelector(".passwordPlaceholder").style.color = "#E7E6EB"
 
 
 })
@@ -88,3 +106,23 @@ const getSliderVal = () => {
   }
 
 slider.addEventListener('input', handleSliderInput);
+
+
+document.getElementById('copyButton').addEventListener('click', function() {
+    var textToCopy = document.getElementById('textToCopy');
+    
+
+    var range = document.createRange();
+  
+
+    range.selectNode(textToCopy);
+  
+
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+  
+
+    document.execCommand('copy');
+  
+
+  });
