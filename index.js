@@ -2,21 +2,23 @@ const bar = document.querySelector(".strengthRatingBars .bar")
 
 
 document.querySelector(".generateBtn").addEventListener("click",()=>{
-    
+    passStrength = ""
     const placeHolder = generateRandomText()
     document.querySelector(".passwordPlaceholder").textContent = placeHolder;
     strengthPredictor();
     document.querySelector(".strengthRatingText").textContent = passStrength;
-    
+    document.querySelectorAll(".strengthRatingBars .bar").forEach(function(bars){
+        bars.style.backgroundColor = ""
+    })
     if (passStrength == "WEAK"){
         document.querySelector(".strengthRatingBars > div:nth-child(1)").style.backgroundColor = "red"
     }else if(passStrength == "MEDIUM"){
         document.querySelectorAll(".strengthRatingBars > div:nth-child(-n+2)").forEach(function(childDiv){
             childDiv.style.backgroundColor = "orange"
-            console.log("selected")
+            
         })
     }else if(passStrength == "STRONG"){
-        document.querySelectorAll(".strengthRatingBars > div").forEach(function(divs){
+        document.querySelectorAll(".strengthRatingBars .bar").forEach(function(divs){
             divs.style.backgroundColor = "green"
         })
     }
@@ -63,23 +65,29 @@ function generateRandomText() {
 }
 
 
-let checkboxCount = 0;
 
+
+let checkboxCount = 0;
 
 function handleCheckboxClick(event) {
     const checkbox = event.target;
     const isChecked = checkbox.checked;
-    
-    // Increment the counter when a checkbox is clicked
-    if (isChecked) {
-        checkboxCount++;
-    }
+
+    // Reset the counter before updating
+    checkboxCount = 0;
+
+    // Increment the counter for each checked checkbox
+    checkBoxes.forEach((box) => {
+        if (box.checked) {
+            checkboxCount++;
+        }
+    });
 }
 
-checkBoxes.forEach(box => {
-    box.addEventListener('click',handleCheckboxClick);
-    
-})
+checkBoxes.forEach((box) => {
+    box.addEventListener('click', handleCheckboxClick);
+});
+
 
 
 
