@@ -26,6 +26,7 @@ document.querySelector(".generateBtn").addEventListener("click",()=>{
     document.querySelector(".passwordPlaceholder").style.color = "#E7E6EB"
 
 
+
 })
 
 const checkBoxes = document.querySelectorAll('input[type=checkbox]');
@@ -36,19 +37,34 @@ const characters = {
     lowercase: ['abcdefghijklmnopqrstuvwxyz', 26],
     numbers: ['1234567890', 10],
     symbols: ['!@#$%^&*()', 10],
+
   }
 
 function generateRandomText() {
     var finalPass = '';
     var result = [];
+    let unique = false;
     let charPool = 0;
     checkBoxes.forEach(box => {
+        
         box.addEventListener('click',handleCheckboxClick);
         if(box.checked) {
-        result.push(characters[box.value][0]);
-        charPool += characters[box.value][1];
+            if (box.value != "unique"){
+                result.push(characters[box.value][0]);
+                charPool += characters[box.value][1];
+            }else{
+                unique = true;
+
+            }
+        
         }
     })
+
+    if (slider.value > charPool){
+        alert("Not possible")
+        return;
+    }
+
     
     if (result) {
         for(let i=0; i<slider.value; i++) {
@@ -57,15 +73,18 @@ function generateRandomText() {
   
           const randCharIndex = Math.floor(Math.random() * randSet.length);
           const randChar = randSet[randCharIndex];
+          if (finalPass.includes(randChar) && unique){
+                i--
+          }else{
+            finalPass += randChar;
+          }
           
-          finalPass += randChar;
+
         }
       }
+    
     return finalPass
 }
-
-
-
 
 let checkboxCount = 0;
 
@@ -73,10 +92,10 @@ function handleCheckboxClick(event) {
     const checkbox = event.target;
     const isChecked = checkbox.checked;
 
-    // Reset the counter before updating
+    
     checkboxCount = 0;
 
-    // Increment the counter for each checked checkbox
+   
     checkBoxes.forEach((box) => {
         if (box.checked) {
             checkboxCount++;
@@ -98,7 +117,7 @@ function strengthPredictor() {
         passStrength = "WEAK";
     } else if (slider.value >= 8 && checkboxCount == 3) {
         passStrength = "MEDIUM";
-    } else if (slider.value >= 8 && checkboxCount == 4) {
+    } else if (slider.value >= 8 && checkboxCount >= 4) {
         passStrength = "STRONG";
     }
 }
@@ -134,3 +153,7 @@ document.getElementById('copyButton').addEventListener('click', function() {
   
 
   });
+
+
+
+
